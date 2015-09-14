@@ -97,8 +97,12 @@ void Game::run() {
         //While application is running
         while (!quit) {
             //quit if dead
-            if (snake.is_dead())
+            if (snake.is_dead()) {
                 quit = true;
+                char text[50];
+                sprintf(text, "Sorry! You have lost! Your score is %d!\n", snake.get_result());
+                SDL_ShowSimpleMessageBox(SDL_MESSAGEBOX_INFORMATION,"Game Over", text, NULL);
+            }
 
             //move after SPEED ms
             curr_time = SDL_GetTicks();
