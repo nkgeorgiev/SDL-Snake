@@ -26,3 +26,9 @@
 *.exe
 *.out
 *.app
+
+#project files
+.idea/*
+
+#vim swp files
+*.swp
